@@ -8,7 +8,7 @@ To do that I had to adapt the project slightly to get Jest to work with TypeScri
 
 ## Setting up the project to use Jest with TypeScript
 
-In your terminal, navigate to the directory inside which you want your new project directory to live.
+In your terminal, navigate to the directory inside which you want your new project directory to live then follow the steps below:
 
     mkdir [PROJECT-NAME]
     cd [PROJECT-NAME]
