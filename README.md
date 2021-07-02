@@ -1,11 +1,17 @@
 # TypeScript Basics
 
-## Re-doing the Manchester Codes JavaScript Basics tasks in TypeScript
+# Re-doing the Manchester Codes JavaScript Basics project in TypeScript
 
-### Setting up the project to use Jest with TypeScript
+As part of my first steps in getting to grips with TypeScript I thought it might be a good idea to work through the JavaScript basics tasks from the Manchester Codes Fundamentals module but this time using TypeScript.
 
-    mkdir [PROJECT_NAME]
-    cd [PROJECT_NAME]
+To do that I had to adapt the project slightly to get Jest to work with TypeScript.
+
+## Setting up the project to use Jest with TypeScript
+
+In your terminal, navigate to the directory inside which you want your new project directory to live.
+
+    mkdir [PROJECT-NAME]
+    cd [PROJECT-NAME]
     mkdir src __tests__
     git init
     npm init [setting - test command: jest]
@@ -18,11 +24,11 @@ Otherwise:
 
     npm install jest @types/jest ts-jest typescript ts-node -D
 
-Create a `jest.config.js` file
+Create a `jest.config.js` file...
 
     touch jest.config.js
 
-Add the following code to `jest.config.js`. This seems to help Jest to manage ES6 modules (along with `"esModuleInterop": true,` in tsconfig.json )
+Add the following code to `jest.config.js`.
 
 ```javascript
 module.exports = {
@@ -32,7 +38,10 @@ module.exports = {
 }
 ```
 
-Create a `tsconfig.json` file with the command
+I'm unsure of the technical ins and outs of this but TypeScript seems to require the use of ES6-style modules, which Jest doesn't like. The above code seems to help Jest to manage ES6 modules (along with `"esModuleInterop": true,` in tsconfig.json - see later step).
+
+
+Next, create a `tsconfig.json` file with the command...
 
     tsc --init
 
@@ -46,7 +55,7 @@ Use ES6 import statements at the top of your test files. Eg. for `numbers.test.t
 
     import { power, round, roundUp, roundDown, abs, quotient } from "../src/numbers";`
 
-In the src files just export each function in the ES6 way. Eg:
+Build your functions in the `src` directory and export each function in the ES6 way. Eg:
 
 ```javascript
 export const power = (x: number, y: number): number => {
