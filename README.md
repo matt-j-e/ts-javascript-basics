@@ -6,10 +6,9 @@
 
     mkdir [PROJECT_NAME]
     cd [PROJECT_NAME]
-    git init
     mkdir src __tests__
-    npm init
-      test command: jest
+    git init
+    npm init [setting - test command: jest]
     echo /node_modules > .gitignore
 
 If you have typescript & ts-node installed globally:
@@ -19,7 +18,7 @@ Otherwise:
 
     npm install jest @types/jest ts-jest typescript ts-node -D
 
-Then
+Create a `jest.config.js` file
 
     touch jest.config.js
 
@@ -33,15 +32,15 @@ module.exports = {
 }
 ```
 
-Create a tsconfig.json file with the command
+Create a `tsconfig.json` file with the command
 
     tsc --init
 
 
-Edit tsconfig.json file as follows:
+Edit `tsconfig.json` file as follows:
 
     "rootDir": "./src",` [and uncomment]
-    "esModuleInterop": true,` [probably already  set to this]
+    "esModuleInterop": true,` [and uncomment - probably already set up like this]
 
 Use ES6 import statements at the top of your test files. Eg. for `numbers.test.ts`:
 
